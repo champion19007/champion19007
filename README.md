@@ -1,120 +1,110 @@
-<!-- Pixel Background Banner -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/champion19007/champion19007/main/champion19007/pixel-bg.png" width="100%" alt="pixel banner"/>
+  <img src="https://github.com/champion19007/champion19007/blob/main/champion19007/moises-dimas-resting-knight.gif" width="100%" alt="Header GIF"/>
 </p>
 
-<br>
+# Hey, I'm **Sai Yashwant Reddy**  
+### aka champion19007
 
-<!-- Pixel Style Title -->
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=18&duration=3000&pause=800&color=FFFFFF&center=true&vCenter=true&width=700&lines=Sai+Yashwant+Reddy;AI+%2F+ML+Engineer+%7C+LLMs+%7C+CV+%7C+RL;Building+Pixel+Perfect+Intelligent+Systems" alt="Pixel Title"/>
-</p>
-
-<br>
-
-<!-- Pixel Divider -->
-<p align="center">
-  <img src="https://raw.githubusercontent.com/rahulbanerjee26/githubProfileReadmeGenerator/main/src/assets/images/traits/pixel-divider.gif" width="70%" />
-</p>
-
-<br>
-
-## 🎮 About Me (Pixel Style)
-
-I'm an **AI/ML Engineer & Researcher** building intelligent systems inspired by  
-**real-time vision, LLM reasoning, and reinforcement learning** — all wrapped in a  
-dark, atmospheric pixel aesthetic.
-
-I focus on:
-- 🧠 Deep Learning  
-- 🔍 Computer Vision  
-- 🗣️ LLM Agents  
-- ♟️ Reinforcement Learning (MCTS + Minimax Hybrid)  
-- 🚗 Robotics + Autonomous Systems  
-
-<br>
-
-<!-- Pixel Divider -->
-<p align="center">
-  <img src="https://raw.githubusercontent.com/rahulbanerjee26/githubProfileReadmeGenerator/main/src/assets/images/traits/pixel-divider.gif" width="70%" />
-</p>
-
-<br>
-
-## 🔬 Research & Innovation
-
-- 🧠 **Hybrid Minimax–MCTS Chess Engine** (Patent Filed)  
-- 🚗 **LLM-Driven Autonomous Car Agent** (99% Action Accuracy)  
-- 🧬 **Deep Learning for Multiplex PCR Primer Design**  
-- 🎭 **Deepfake Detection (96% Accuracy, Ensemble Model)**  
-- 📄 **ACROSET 2025 Paper + Journal Extension**
-
-<br>
-
-<!-- Pixel Divider -->
-<p align="center">
-  <img src="https://raw.githubusercontent.com/rahulbanerjee26/githubProfileReadmeGenerator/main/src/assets/images/traits/pixel-divider.gif" width="70%" />
-</p>
-
-<br>
-
-## 🏆 Achievements
-
-- 🥇 **Winner — CodeWar 4.0 Hackathon**  
-- 🥈 **Finalist — Next Big Thing Hackathon**  
-- 🤖 **Finalist — International Robotics eYRC**
-
-<br>
-
-<!-- Pixel Divider -->
-<p align="center">
-  <img src="https://raw.githubusercontent.com/rahulbanerjee26/githubProfileReadmeGenerator/main/src/assets/images/traits/pixel-divider.gif" width="70%" />
-</p>
-
-<br>
-
-## 🧰 Tech Stack (Pixel Icons)
+![Profile views](https://komarev.com/ghpvc/?username=champion19007&label=Profile%20views&color=7745bf&)
+![GitHub followers](https://img.shields.io/github/followers/champion19007?style=flat&logo=github&label=Followers&color=7c60d1)
+![GitHub stars](https://img.shields.io/github/stars/champion19007?style=flat&logo=github&label=Stars&color=fd7cff)
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,cpp,cs,typescript,javascript,bash,matlab" />
-  <br>
-  <img src="https://skillicons.dev/icons?i=pytorch,tensorflow,sklearn,opencv" />
-  <br>
-  <img src="https://skillicons.dev/icons?i=react,nodejs,express,flask,fastapi" />
-  <br>
-  <img src="https://skillicons.dev/icons?i=mongodb,postgres" />
-  <br>
-  <img src="https://skillicons.dev/icons?i=docker,linux,git,github,vscode,aws" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=7C60D1&center=true&vCenter=true&multiline=false&repeat=true&width=600&lines=AI+%2F+ML+Engineer;Computer+Vision+Models;LLM+Agents+%26+RAG;Reinforcement+Learning+%2B+Search;Real+World+AI+Systems" alt="Typing SVG" />
 </p>
 
-<br>
+---
 
-<!-- Pixel Divider -->
-<p align="center">
-  <img src="https://raw.githubusercontent.com/rahulbanerjee26/githubProfileReadmeGenerator/main/src/assets/images/traits/pixel-divider.gif" width="70%" />
-</p>
+## 📬 About Me — Contact
 
-<br>
+- **Email:** your-email@example.com  
+- **LinkedIn:** your-linkedin-url  
+- **Location:** India  
+- **Interest Areas:** LLMs • Computer Vision • RL • Agents • Search Algorithms  
 
-## 📊 Github Stats (Pixel Theme)
+> [!IMPORTANT]
+> Don’t take life too seriously — even neural nets overfit sometimes.
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=champion19007&show_icons=true&theme=tokyonight&hide_border=true&custom_title=Pixel+Knight+Stats"/>
-  <br><br>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=champion19007&theme=tokyonight&hide_border=true" />
-</p>
+---
 
-<br>
+<div class="badges-githubstats">
+  <img src="https://github-readme-stats.vercel.app/api?username=champion19007&show_icons=true&hide_border=true&count_private=true&bg_color=111%2C082421%2C0D1117&title_color=7c60d1&text_color=f0f0f5&icon_color=319e8d&border_color=131313&border_radius=10" height="140" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=champion19007&hide_border=true&background=082421&border=131313&stroke=c7b8ff&ring=fd7cff&fire=fd0098&currStreakNum=c7b8ff&currStreakLabel=7c60d1&sideNums=c7b8ff&sideLabels=7c60d1&dates=f0f0f5&border_radius=10" height="140" />
+</div>
 
-<!-- Pixel Divider -->
-<p align="center">
-  <img src="https://raw.githubusercontent.com/rahulbanerjee26/githubProfileReadmeGenerator/main/src/assets/images/traits/pixel-divider.gif" width="70%" />
-</p>
+---
 
-<br>
+## 🔧 What I Do Now
 
-## 🎭 Closing Scene
+- Build **AI/ML models** for real-world use  
+  ![Python](https://img.shields.io/badge/Python-319e8d?style=flat&logo=python&logoColor=ffffff)
+  ![PyTorch](https://img.shields.io/badge/PyTorch-fd0098?style=flat&logo=pytorch&logoColor=ffffff)
 
-Thanks for visiting my profile —  
-You’re now exiting the **Pixel Realm** ⚔️  
-Stay curious. Stay creative. Stay evolving.
+- Engineer **Computer Vision** systems  
+  ![CV](https://img.shields.io/badge/Computer_Vision-00fff9?style=flat&logo=opencv&logoColor=0b0b0b)
+
+- Build **LLM Agents**, RAG systems, tool-use architectures  
+  ![LLMs](https://img.shields.io/badge/LLMs-7c60d1?style=flat&logo=openai&logoColor=ffffff)
+
+- Research **Search + Reinforcement Learning**  
+  ![RL](https://img.shields.io/badge/Reinforcement_Learning-29adff?style=flat&logo=academia&logoColor=ffffff)
+
+- Autonomous Driving AI — Behavioral Cloning  
+- RL + Search Hybrids — PPO, A2C, MCTS, Minimax  
+
+---
+
+## ✨ I Can Help With
+
+- LLM Agents & RAG  
+- Computer Vision (YOLO, ViTs)  
+- Search Algorithms (MCTS, Minimax)  
+- RL pipelines  
+- ML Deployments  
+- Applied AI Prototyping  
+
+---
+
+## 🌟 Featured Projects
+
+### ♟️ **Hybrid Minimax–MCTS Chess Engine** *(Patent Filed)*  
+A hybrid evaluation engine combining deterministic and probabilistic search.
+
+### 🚗 **LLM-Operated Autonomous Car Agent**  
+Achieved **99% action accuracy** on driving-classification datasets.
+
+### 🧬 **PolyPrimer**  
+PCR primer design using Transformer + CNN-BiLSTM hybrids.
+
+### 🎭 **Deepfake Detection Ensemble**  
+Achieved **96% accuracy** via multi-model feature fusion.
+
+---
+
+<div>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=champion19007&layout=compact&bg_color=111%2C082421%2C0D1117&title_color=7c60d1&text_color=f0f0f5&hide_border=true&border_radius=10&border_color=131313" />
+</div>
+
+---
+
+## 📝 Docs Workflow  
+I keep all my notes + experiments in Obsidian & Notion.  
+I prefer clean markdown, code journaling, and reproducible logs.
+
+---
+
+## 🪄 Want to Fork This Profile?  
+Feel free to copy and customize this layout.  
+I’ll release a template soon.
+
+---
+
+## ⭐ Recent Activity  
+(*This section updates automatically if you add the workflow.*)
+
+---
+
+## ✨ WakaTime Stats  
+(*Enable by adding your WakaTime key and GitHub Actions workflow.*)
+
+---
