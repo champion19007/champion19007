@@ -1,25 +1,38 @@
 <table>
   <tr>
-    <!-- Left: Capsule Header -->
-    <td width="70%" align="center" valign="center">
+
+    <!-- LEFT SIDE: HOLLOW-KNIGHT STYLE CAPSULE HEADER -->
+    <td width="70%">
       <a href="https://github.com/champion19007">
         <img 
-          src="https://capsule-render.vercel.app/api?type=waving&color=0:1a0f2e,50:2d1b4e,100:1a0f2e&height=300&section=header&text=Hey,%20World!%20I'm%20Sai&fontSize=70&fontColor=f0f0f5&animation=fadeIn&fontAlignY=38&desc=AI%20Engineer%20•%20LLM%20Agents%20•%20Computer%20Vision%20•%20Reinforcement%20Learning&descSize=20&descAlignY=55" 
-          alt="Header"
-          style="border-radius: 10px;" />
+          src="https://capsule-render.vercel.app/api?type=waving&height=300&section=header
+          &text=Into%20the%20Void%20with%20Sai%20Yashwant%20Reddy
+          &fontSize=55
+          &fontColor=c9c7d2
+          &fontAlignY=40
+          &color=0:0a0a0f,50:0f0f1a,100:0a0a0f
+          &animation=fadeIn
+          &desc=AI%20Engineer%20%E2%80%A2%20LLM%20Agents%20%E2%80%A2%20Computer%20Vision%20%E2%80%A2%20Reinforcement%20Learning
+          &descSize=20
+          &descAlignY=60" 
+          width="100%"
+          alt="Hollow Knight Styled Header"
+          style="border-radius: 8px;" />
       </a>
     </td>
 
-    <!-- Right: Your Hollow Knight GIF -->
-    <td width="30%" align="center" valign="center">
+    <!-- RIGHT SIDE: MATCHED-GIF HEIGHT -->
+    <td width="30%" align="center" valign="middle">
       <img 
-        src="https://github.com/champion19007/champion19007/blob/main/champion19007/moises-dimas-resting-knight.gif" 
-        width="200px" 
-        alt="Knight GIF"
-        style="border-radius: 15px;" />
+        src="https://github.com/champion19007/champion19007/blob/main/champion19007/moises-dimas-resting-knight.gif"
+        alt="Hollow Knight GIF"
+        height="300px"
+        style="border-radius: 12px; margin-left: 10px;" />
     </td>
+
   </tr>
 </table>
+
 
 
 # Hey, I'm **Sai Yashwant Reddy**  
