@@ -1,39 +1,16 @@
-<!-- ====================== HEADER ====================== -->
+<table><tr>
 
-<table>
-  <tr>
+<td width="70%">
+<a href="https://github.com/champion19007">
+<img src="https://capsule-render.vercel.app/api?type=waving&height=300&section=header&text=Into%20the%20Void%20with%20Sai%20Yashwant%20Reddy&fontSize=55&fontColor=c9c7d2&fontAlignY=40&color=0:0a0a0f,50:0f0f1a,100:0a0a0f&animation=fadeIn&desc=AI%20Engineer%20%E2%80%A2%20LLM%20Agents%20%E2%80%A2%20Computer%20Vision%20%E2%80%A2%20Reinforcement%20Learning&descSize=20&descAlignY=60" width="100%" style="border-radius:8px;" />
+</a>
+</td>
 
-    <!-- LEFT SIDE: HOLLOW-KNIGHT STYLE CAPSULE HEADER -->
-    <td width="70%">
-      <a href="https://github.com/champion19007">
-        <img 
-          src="https://capsule-render.vercel.app/api?type=waving&height=300&section=header
-          &text=Into%20the%20Void%20with%20Sai%20Yashwant%20Reddy
-          &fontSize=55
-          &fontColor=c9c7d2
-          &fontAlignY=40
-          &color=0:0a0a0f,50:0f0f1a,100:0a0a0f
-          &animation=fadeIn
-          &desc=AI%20Engineer%20%E2%80%A2%20LLM%20Agents%20%E2%80%A2%20Computer%20Vision%20%E2%80%A2%20Reinforcement%20Learning
-          &descSize=20
-          &descAlignY=60" 
-          width="100%"
-          alt="Hollow Knight Styled Header"
-          style="border-radius: 8px;" />
-      </a>
-    </td>
+<td width="30%" align="center" valign="middle">
+<img src="https://github.com/champion19007/champion19007/blob/main/champion19007/moises-dimas-resting-knight.gif" height="300px" style="border-radius:12px;margin-left:10px;" />
+</td>
 
-    <!-- RIGHT SIDE: MATCHED-GIF HEIGHT -->
-    <td width="30%" align="center" valign="middle">
-      <img 
-        src="https://github.com/champion19007/champion19007/blob/main/champion19007/moises-dimas-resting-knight.gif"
-        alt="Hollow Knight GIF"
-        height="300px"
-        style="border-radius: 12px; margin-left: 10px;" />
-    </td>
-
-  </tr>
-</table>
+</tr></table>
 
 
 <!-- ====================== BADGES ====================== -->
