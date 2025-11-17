@@ -1,11 +1,50 @@
-<h1 align="center">Hey, I'm Sai Yashwant 👋</h1>
-<h3 align="center">AI/ML Engineer • Computer Vision • LLMs • Full-Stack Developer</h3>
+## 👋 Hey, I'm Sai Yashwant Reddy
 
-<p align="center">
-  <a href="https://www.linkedin.com/in/saiyashwantreddy">LinkedIn</a> •
-  <a href="https://github.com/champion19007">GitHub</a> •
-  <a href="mailto:champion19007@gmail.com">Email</a>
-</p>
+I'm an AI/ML engineer and researcher who loves building intelligent systems — from **LLM-powered agents** and **autonomous driving models**, to **real-time computer vision pipelines** and **hybrid RL chess engines**.  
+I enjoy working at the intersection of **deep learning, reinforcement learning, computer vision, NLP, and full-stack AI development**.
+
+My work combines both **practical engineering** and **research innovation**. I’ve developed and published systems that push the boundaries of how AI models reason, see, and interact.
+
+---
+
+### 🔬 **Research Focus**
+- **Hybrid Minimax–MCTS Chess Engine (RLHF Enhanced)**  
+  First-inventor on a patent for a new chess AI architecture combining Minimax, MCTS, and reinforcement learning.  
+  Published at **ACROSET**, with journal extension under review (+10M self-play games).
+
+- **LLM-Operated Autonomous Car Agent (CARLA Simulator)**  
+  Built an LLM-guided driving agent trained on 500GB+ data, achieving ~99% action accuracy and major hallucination reduction.
+
+- **PolyPrimer: Deep Learning for Multiplex PCR Primer Design**  
+  Designed a hybrid **Transformer + CNN-BiLSTM** model improving primer selection reliability.  
+  Submitted to **IC_ASET**.
+
+- **Deepfake Detection using MesoNet + ResNet-50**  
+  Developed a transfer-learning ensemble achieving **96% accuracy**.
+
+---
+
+### 🏆 **Achievements**
+- 🥇 **Winner — CodeWar 4.0 Hackathon**  
+- 🥈 **Finalist — Next Big Thing Hackathon**  
+- 🤖 **Finalist — International Robotics eYRC Competition**  
+- 🧠 **Patent Filed — Hybrid Chess Engine Architecture**  
+- 📄 **Conference Paper Accepted — ACROSET 2025**  
+
+---
+
+### 🚀 What I Love Building
+- LLM agents and reasoning models  
+- Real-time computer vision systems (YOLOv8, ViTs)  
+- Reinforcement learning + search hybrids (MCTS / Minimax / RLHF)  
+- RAG applications and AI SaaS products  
+- Autonomous robotics and perception models  
+
+---
+
+Always learning, always building.  
+If my research or projects interest you, feel free to connect or collaborate!
+
 
 ---
 
