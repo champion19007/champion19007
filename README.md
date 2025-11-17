@@ -1,49 +1,34 @@
-## 👋 Hey, I'm Sai Yashwant Reddy
+## 👋 Hey, I'm **Sai Yashwant Reddy**
 
-I'm an AI/ML engineer and researcher who loves building intelligent systems — from **LLM-powered agents** and **autonomous driving models**, to **real-time computer vision pipelines** and **hybrid RL chess engines**.  
-I enjoy working at the intersection of **deep learning, reinforcement learning, computer vision, NLP, and full-stack AI development**.
+**AI/ML Engineer • Computer Vision • LLMs • Researcher**
 
-My work combines both **practical engineering** and **research innovation**. I’ve developed and published systems that push the boundaries of how AI models reason, see, and interact.
-
----
-
-### 🔬 **Research Focus**
-- **Hybrid Minimax–MCTS Chess Engine (RLHF Enhanced)**  
-  First-inventor on a patent for a new chess AI architecture combining Minimax, MCTS, and reinforcement learning.  
-  Published at **ACROSET**, with journal extension under review (+10M self-play games).
-
-- **LLM-Operated Autonomous Car Agent (CARLA Simulator)**  
-  Built an LLM-guided driving agent trained on 500GB+ data, achieving ~99% action accuracy and major hallucination reduction.
-
-- **PolyPrimer: Deep Learning for Multiplex PCR Primer Design**  
-  Designed a hybrid **Transformer + CNN-BiLSTM** model improving primer selection reliability.  
-  Submitted to **IC_ASET**.
-
-- **Deepfake Detection using MesoNet + ResNet-50**  
-  Developed a transfer-learning ensemble achieving **96% accuracy**.
+I build intelligent systems that combine  
+**Deep Learning × Reinforcement Learning × LLMs × Real-Time Vision.**
 
 ---
 
-### 🏆 **Achievements**
-- 🥇 **Winner — CodeWar 4.0 Hackathon**  
+### 🔬 Research & Innovation
+- 🧠 **Hybrid Minimax–MCTS Chess Engine (Patent Filed)**  
+- 🚗 **LLM-Driven Autonomous Car Agent (99% action accuracy)**  
+- 🧬 **PolyPrimer: Transformer + CNN-BiLSTM for PCR Primer Design**  
+- 🎭 **Deepfake Detection (96% accuracy, ensemble model)**  
+- 📄 **Published at ACROSET • Journal under review**
+
+---
+
+### 🏆 Highlights
+- 🥇 **Hackathon Winner — CodeWar 4.0**  
 - 🥈 **Finalist — Next Big Thing Hackathon**  
-- 🤖 **Finalist — International Robotics eYRC Competition**  
-- 🧠 **Patent Filed — Hybrid Chess Engine Architecture**  
-- 📄 **Conference Paper Accepted — ACROSET 2025**  
+- 🤖 **Finalist — International Robotics eYRC**
 
 ---
 
-### 🚀 What I Love Building
-- LLM agents and reasoning models  
-- Real-time computer vision systems (YOLOv8, ViTs)  
-- Reinforcement learning + search hybrids (MCTS / Minimax / RLHF)  
-- RAG applications and AI SaaS products  
-- Autonomous robotics and perception models  
-
----
-
-Always learning, always building.  
-If my research or projects interest you, feel free to connect or collaborate!
+### 🚀 What I Build
+⚡ LLM Agents  
+⚡ YOLO/ViT-based Vision Systems  
+⚡ RL + Search Hybrid AIs  
+⚡ RAG Applications  
+⚡ Full-Stack AI SaaS  
 
 
 ---
