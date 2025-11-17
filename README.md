@@ -1,6 +1,26 @@
-<p align="center">
-  <img src="https://github.com/champion19007/champion19007/blob/main/champion19007/moises-dimas-resting-knight.gif" width="100%" alt="Header GIF"/>
-</p>
+<table>
+  <tr>
+    <!-- Left: Capsule Header -->
+    <td width="70%" align="center" valign="center">
+      <a href="https://github.com/champion19007">
+        <img 
+          src="https://capsule-render.vercel.app/api?type=waving&color=0:1a0f2e,50:2d1b4e,100:1a0f2e&height=300&section=header&text=Hey,%20World!%20I'm%20Sai&fontSize=70&fontColor=f0f0f5&animation=fadeIn&fontAlignY=38&desc=AI%20Engineer%20•%20LLM%20Agents%20•%20Computer%20Vision%20•%20Reinforcement%20Learning&descSize=20&descAlignY=55" 
+          alt="Header"
+          style="border-radius: 10px;" />
+      </a>
+    </td>
+
+    <!-- Right: Your Hollow Knight GIF -->
+    <td width="30%" align="center" valign="center">
+      <img 
+        src="https://github.com/champion19007/champion19007/blob/main/champion19007/moises-dimas-resting-knight.gif" 
+        width="200px" 
+        alt="Knight GIF"
+        style="border-radius: 15px;" />
+    </td>
+  </tr>
+</table>
+
 
 # Hey, I'm **Sai Yashwant Reddy**  
 ### aka champion19007
