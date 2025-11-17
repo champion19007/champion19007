@@ -24,7 +24,11 @@
 ---
 
 ## ⭐ Featured Projects
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=champion19007&repo=pdf-ai-saas&theme=tokyonight)](https://github.com/champion19007/pdf-ai-saas)
+
+[![RL Chess Engine](https://github-readme-stats.vercel.app/api/pin/?username=champion19007&repo=RL-Chess-Engine-Minimax-MCTS&theme=tokyonight)](https://github.com/champion19007/RL-Chess-Engine-Minimax-MCTS)
+
+[![PDF AI SaaS](https://github-readme-stats.vercel.app/api/pin/?username=champion19007&repo=pdf-ai-saas&theme=tokyonight)](https://github.com/champion19007/pdf-ai-saas)
+
 
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=champion19007&repo=Real-Time-Animal-Detection-Using-CCTV-Camera-OpenVision&theme=tokyonight)](https://github.com/champion19007/Real-Time-Animal-Detection-Using-CCTV-Camera-OpenVision)
 
