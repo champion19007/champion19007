@@ -2,7 +2,7 @@
 <table><tr>
 <td width="70%">
 <p align="center">
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=38&duration=3000&pause=1000&color=6AAFFF&center=true&vCenter=true&width=800&lines=Into+the+Void+with+Sai+Yashwant;AI+%2F+ML+Engineer;LLM+Agents+%26+RAG+Pipelines;Computer+Vision+%26+Reinforcement+Learning;Autonomous+AI+Systems" alt="Typing Animation" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=38&duration=3000&pause=1000&color=6AAFFF&center=true&vCenter=true&width=800&lines=Into+the+Void+with+Sai+Yashwant;AI+%2F+ML+Engineer;LLM+Agents+%26+RAG+Pipelines;Computer+Vision;Reinforcement+Learning;Autonomous+AI+Systems" alt="Typing Animation" />
 </p>
 </td>
 <td width="30%" align="center" valign="middle">
