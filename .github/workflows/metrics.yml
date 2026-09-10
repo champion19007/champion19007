@@ -1,7 +1,14 @@
 name: Metrics
+
 on:
-  schedule: [{cron: "0 * * * *"}]  # updates every hour
+  # Once a day is plenty for a profile card. The previous hourly cron
+  # (0 * * * *) burned ~24x the Actions minutes and API quota for no gain.
+  schedule: [{ cron: "0 4 * * *" }]
   workflow_dispatch:
+
+permissions:
+  contents: write
+
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
@@ -9,57 +16,44 @@ jobs:
       - name: Generate GitHub metrics
         uses: lowlighter/metrics@latest
         with:
+          # REQUIRED. A classic PAT with the `public_repo` scope, stored as a
+          # repo secret named METRICS_TOKEN. If this is missing or expired the
+          # whole job fails -- that was the cause of the previous run failures.
           token: ${{ secrets.METRICS_TOKEN }}
 
-          # Output
+          # Output -- README.md embeds this file in the "Hunter's Journal" section.
           filename: github-metrics.svg
-          base: header, repositories, activity, community, metadata
 
-          # Appearance
+          base: header, repositories, metadata
           config_timezone: Asia/Kolkata
-          config_presets: "large"
-          plugin_nightscout: no
 
-          # Plugins (ALL enabled)
+          # Hollow Knight palette, matched to the README.
+          config_display: large
+          config_octicon: yes
+
+          # Plugins. Deliberately trimmed: plugins needing extra token scopes
+          # (traffic, projects, notable, contributors) were the other failure
+          # source. Everything below works on a plain public_repo PAT.
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
 
           plugin_languages: yes
-          plugin_languages_ignored: html, css, tex
+          plugin_languages_ignored: html, css, tex, scss
           plugin_languages_details: percentage
           plugin_languages_limit: 10
-
-          plugin_followup: yes
-          plugin_followup_indepth: yes
-
-          plugin_stars: yes
-          plugin_stars_limit: 12
-
-          plugin_repositories: yes
-          plugin_repositories_affiliations: "owner, collaborator"
-
-          plugin_contributors: yes
-
-          plugin_traffic: yes
-
-          plugin_achievements: yes
-          plugin_achievements_threshold: B
-
-          plugin_gists: yes
 
           plugin_habits: yes
           plugin_habits_from: 200
           plugin_habits_days: 14
           plugin_habits_facts: yes
+          plugin_habits_charts: yes
 
-          plugin_calendar: yes
+          plugin_stars: yes
+          plugin_stars_limit: 6
 
-          plugin_lines: yes
+          plugin_achievements: yes
+          plugin_achievements_threshold: B
 
           plugin_topics: yes
-          plugin_topics_limit: 25
+          plugin_topics_limit: 20
           plugin_topics_mode: icons
-
-          plugin_projects: yes
-
-          plugin_notable: yes
