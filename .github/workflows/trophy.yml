@@ -1,0 +1,55 @@
+name: Generate Trophies
+
+# Renders ryo-ma/github-profile-trophy into assets/trophy.svg and commits it.
+#
+# Why generate it here instead of using the hosted image URL from that
+# project's README (https://github-profile-trophy.vercel.app/?username=...):
+# that deployment is switched off and returns "402 Payment Required /
+# DEPLOYMENT_DISABLED" for every user, including ryo-ma's own username.
+# Generating in CI removes the third-party uptime dependency entirely --
+# the README points at a file in this repo, so it cannot break again.
+#
+# Pinned to a master commit rather than the v1.0 tag: v1.0 is the commit
+# that first added the Action (Jan 2026) and predates the Deno 2.x import
+# fix (#448) and the GraphQL star-failure fix (#454) from July 2026.
+#
+# Run once manually after merge (Actions -> Generate Trophies -> Run
+# workflow), otherwise assets/trophy.svg does not exist until the cron.
+
+on:
+  schedule: [{ cron: "30 4 * * *" }]
+  workflow_dispatch:
+
+jobs:
+  trophy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Render trophy SVG
+        uses: ryo-ma/github-profile-trophy@e3c89df995e92e67cdd4b2acaab9d974583dc1f7
+        with:
+          username: ${{ github.repository_owner }}
+          output_path: assets/trophy.svg
+          # gruvbox is the closest of the bundled themes to the README
+          # palette: burnt orange #d65d0e, bone #ebdbb2, gold #fabd2f.
+          # Swap for "alduin" (darker, more muted) or "darkhub" (matches
+          # GitHub's own dark background) if you prefer.
+          theme: gruvbox
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/trophy.svg
+          # --cached covers the new-file case too; plain `git diff` would
+          # report no change for a file that is not yet tracked.
+          if git diff --cached --quiet -- assets/trophy.svg; then
+            echo "Trophies unchanged; nothing to commit."
+          else
+            git commit -m "chore: refresh trophy SVG [skip ci]"
+            git push
+          fi

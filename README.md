@@ -173,6 +173,12 @@ Hybrid <b>CNN + BiLSTM + GRU</b> model for time-series forecasting, capturing lo
 
 <br><br>
 
+<b><sub>⟡ RELICS OF THE HUNT ⟡</sub></b>
+
+<img src="assets/trophy.svg" width="100%" alt="GitHub trophies" />
+
+<br><br>
+
 <b><sub>⟡ TRAILS WALKED ⟡</sub></b>
 
 <img src="https://raw.githubusercontent.com/champion19007/champion19007/output/snake-dark.svg" width="100%" alt="Contribution snake" />
