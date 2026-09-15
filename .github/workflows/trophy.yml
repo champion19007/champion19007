@@ -13,8 +13,9 @@ name: Generate Trophies
 # that first added the Action (Jan 2026) and predates the Deno 2.x import
 # fix (#448) and the GraphQL star-failure fix (#454) from July 2026.
 #
-# Run once manually after merge (Actions -> Generate Trophies -> Run
-# workflow), otherwise assets/trophy.svg does not exist until the cron.
+# assets/trophy.svg is committed, so the README renders immediately on
+# merge. Running this manually (Actions -> Generate Trophies -> Run
+# workflow) is optional -- it just refreshes the counts ahead of the cron.
 
 on:
   schedule: [{ cron: "30 4 * * *" }]
@@ -33,12 +34,20 @@ jobs:
         with:
           username: ${{ github.repository_owner }}
           output_path: assets/trophy.svg
-          # gruvbox is the closest of the bundled themes to the README
-          # palette: burnt orange #d65d0e, bone #ebdbb2, gold #fabd2f.
-          # Swap for "alduin" (darker, more muted) or "darkhub" (matches
-          # GitHub's own dark background) if you prefer.
+          # Starting point only -- the recolor step below maps whatever
+          # this emits onto the README palette, so the theme choice just
+          # needs to be dark. gruvbox is closest going in (burnt orange
+          # #d65d0e, bone #ebdbb2), which keeps the remap table small.
+          # Changing this means updating PALETTE in the recolor script.
           theme: gruvbox
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Recolor and drop empty trophies
+        # The Action exposes only `theme` -- no custom hex, and no `rank`
+        # filter (that is a query param of the hosted service, not the
+        # Action). So the palette remap and the removal of "Unknown / 0pt"
+        # cards both happen after rendering. See the script for details.
+        run: python3 .github/scripts/trophy_postprocess.py assets/trophy.svg
 
       - name: Commit if changed
         run: |
