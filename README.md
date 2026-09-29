@@ -38,9 +38,9 @@ I have worked across the stack: transformer models and RAG pipelines, ROS2 robot
 <br><br>
 <b>Currently exploring —</b> local-first LLM agents: small models, MCP tool sandboxes, and runners that act on a schedule without a human in the loop.
 <br><br>
-<a href="https://github.com/champion19007"><img src="https://img.shields.io/badge/GITHUB-0A0A0A?style=flat-square&logo=github&logoColor=F0EDE5" /></a>
-<a href="https://www.linkedin.com/in/saiyashwantreddy"><img src="https://img.shields.io/badge/LINKEDIN-8FB8C9?style=flat-square" /></a>
-<a href="mailto:champion19007@gmail.com"><img src="https://img.shields.io/badge/EMAIL-E0752D?style=flat-square&logo=gmail&logoColor=0A0A0A" /></a>
+<a href="https://github.com/champion19007"><img src="https://img.shields.io/badge/GITHUB-0A0A0A?style=flat-square&logo=github&logoColor=F0EDE5" alt="GitHub" /></a>
+<a href="https://www.linkedin.com/in/saiyashwantreddy"><img src="https://img.shields.io/badge/LINKEDIN-8FB8C9?style=flat-square" alt="LinkedIn" /></a>
+<a href="mailto:champion19007@gmail.com"><img src="https://img.shields.io/badge/EMAIL-E0752D?style=flat-square&logo=gmail&logoColor=0A0A0A" alt="Email" /></a>
 </td>
 <td width="32%" align="center" valign="middle">
 <img src="champion19007/moises-dimas-resting-knight.gif" width="100%" alt="Resting at the bench" />
@@ -67,17 +67,17 @@ I have worked across the stack: transformer models and RAG pipelines, ROS2 robot
 <h3>♟️ <a href="https://github.com/champion19007/Chess_engine_with_Deep_Reinforcement_learning-minmax-mcts-Cpp">Hybrid Minimax–MCTS Chess Engine</a></h3>
 A patent-inspired hybrid engine fusing <b>Minimax</b>, <b>MCTS</b>, and deep evaluation networks in C++.
 <br><br>
-<img src="https://img.shields.io/badge/C++-0A0A0A?style=flat-square&logo=cplusplus&logoColor=8FB8C9" />
-<img src="https://img.shields.io/badge/MCTS-0A0A0A?style=flat-square" />
-<img src="https://img.shields.io/badge/Search-0A0A0A?style=flat-square" />
+<img src="https://img.shields.io/badge/C++-0A0A0A?style=flat-square&logo=cplusplus&logoColor=8FB8C9" alt="C++" />
+<img src="https://img.shields.io/badge/MCTS-0A0A0A?style=flat-square" alt="MCTS" />
+<img src="https://img.shields.io/badge/Search-0A0A0A?style=flat-square" alt="Search" />
 </td>
 <td width="50%" valign="top">
 <h3>🤖 <a href="https://github.com/champion19007/RL-Chess-Engine-Minimax-MCTS">RL Chess Engine — Deep RL + Search</a></h3>
 Reinforcement learning chess engine pairing <b>policy/value networks</b> with Monte Carlo Tree Search.
 <br><br>
-<img src="https://img.shields.io/badge/PyTorch-0A0A0A?style=flat-square&logo=pytorch&logoColor=E0752D" />
-<img src="https://img.shields.io/badge/Deep_RL-0A0A0A?style=flat-square" />
-<img src="https://img.shields.io/badge/Self--Play-0A0A0A?style=flat-square" />
+<img src="https://img.shields.io/badge/PyTorch-0A0A0A?style=flat-square&logo=pytorch&logoColor=E0752D" alt="PyTorch" />
+<img src="https://img.shields.io/badge/Deep_RL-0A0A0A?style=flat-square" alt="Deep RL" />
+<img src="https://img.shields.io/badge/Self--Play-0A0A0A?style=flat-square" alt="Self-Play" />
 </td>
 </tr>
 <tr>
@@ -85,17 +85,17 @@ Reinforcement learning chess engine pairing <b>policy/value networks</b> with Mo
 <h3>🐾 <a href="https://github.com/champion19007/Real-Time-Animal-Detection-Using-CCTV-Camera-OpenVision">Real-Time Animal Detection (CCTV)</a></h3>
 YOLO + OpenCV pipeline detecting animals live from CCTV streams — built for safety monitoring and rapid alerting.
 <br><br>
-<img src="https://img.shields.io/badge/YOLO-0A0A0A?style=flat-square" />
-<img src="https://img.shields.io/badge/OpenCV-0A0A0A?style=flat-square&logo=opencv&logoColor=8FB8C9" />
-<img src="https://img.shields.io/badge/Real--Time-0A0A0A?style=flat-square" />
+<img src="https://img.shields.io/badge/YOLO-0A0A0A?style=flat-square" alt="YOLO" />
+<img src="https://img.shields.io/badge/OpenCV-0A0A0A?style=flat-square&logo=opencv&logoColor=8FB8C9" alt="OpenCV" />
+<img src="https://img.shields.io/badge/Real--Time-0A0A0A?style=flat-square" alt="Real-Time" />
 </td>
 <td width="50%" valign="top">
 <h3>📈 <a href="https://github.com/champion19007/Advanced-Stock-Forecaster-CNN-BiLSTM-GRU-">Advanced Stock Forecaster</a></h3>
 Hybrid <b>CNN + BiLSTM + GRU</b> model for time-series forecasting, capturing local patterns and long-range dependencies.
 <br><br>
-<img src="https://img.shields.io/badge/TensorFlow-0A0A0A?style=flat-square&logo=tensorflow&logoColor=E0752D" />
-<img src="https://img.shields.io/badge/Time_Series-0A0A0A?style=flat-square" />
-<img src="https://img.shields.io/badge/BiLSTM-0A0A0A?style=flat-square" />
+<img src="https://img.shields.io/badge/TensorFlow-0A0A0A?style=flat-square&logo=tensorflow&logoColor=E0752D" alt="TensorFlow" />
+<img src="https://img.shields.io/badge/Time_Series-0A0A0A?style=flat-square" alt="Time Series" />
+<img src="https://img.shields.io/badge/BiLSTM-0A0A0A?style=flat-square" alt="BiLSTM" />
 </td>
 </tr>
 <tr>
@@ -103,17 +103,17 @@ Hybrid <b>CNN + BiLSTM + GRU</b> model for time-series forecasting, capturing lo
 <h3>🏭 <a href="https://github.com/champion19007/local-software-factory">Local Software Factory</a></h3>
 An AI coding assistant that runs <b>entirely on a CPU-only laptop</b> — LangGraph orchestration over Qwen 3 8B via Ollama, with an MCP tool sandbox.
 <br><br>
-<img src="https://img.shields.io/badge/LangGraph-0A0A0A?style=flat-square&logo=chainlink&logoColor=8FB8C9" />
-<img src="https://img.shields.io/badge/Ollama-0A0A0A?style=flat-square&logo=ollama&logoColor=F0EDE5" />
-<img src="https://img.shields.io/badge/MCP-0A0A0A?style=flat-square" />
+<img src="https://img.shields.io/badge/LangGraph-0A0A0A?style=flat-square&logo=chainlink&logoColor=8FB8C9" alt="LangGraph" />
+<img src="https://img.shields.io/badge/Ollama-0A0A0A?style=flat-square&logo=ollama&logoColor=F0EDE5" alt="Ollama" />
+<img src="https://img.shields.io/badge/MCP-0A0A0A?style=flat-square" alt="MCP" />
 </td>
 <td width="50%" valign="top">
 <h3>🛰️ <a href="https://github.com/champion19007/agentd">agentd</a></h3>
 Self-hosted runner for scheduled checks that detects when a source changes shape and proposes a verified repair — <b>never applying one without approval</b>.
 <br><br>
-<img src="https://img.shields.io/badge/Go-0A0A0A?style=flat-square&logo=go&logoColor=8FB8C9" />
-<img src="https://img.shields.io/badge/Agentic-0A0A0A?style=flat-square" />
-<img src="https://img.shields.io/badge/Human--in--the--Loop-0A0A0A?style=flat-square" />
+<img src="https://img.shields.io/badge/Go-0A0A0A?style=flat-square&logo=go&logoColor=8FB8C9" alt="Go" />
+<img src="https://img.shields.io/badge/Agentic-0A0A0A?style=flat-square" alt="Agentic" />
+<img src="https://img.shields.io/badge/Human--in--the--Loop-0A0A0A?style=flat-square" alt="Human-in-the-Loop" />
 </td>
 </tr>
 <tr>
@@ -121,10 +121,10 @@ Self-hosted runner for scheduled checks that detects when a source changes shape
 <h3>🎭 <a href="https://github.com/champion19007/qwerty-studio">qwerty-studio</a></h3>
 Self-hosted anti-detect browser and profile manager — coherent fingerprints with every value drawn from one real device archetype, plus per-profile proxies and persistent sessions, driven from a web console or CLI.
 <br><br>
-<img src="https://img.shields.io/badge/Python-0A0A0A?style=flat-square&logo=python&logoColor=E8C87A" />
-<img src="https://img.shields.io/badge/Playwright-0A0A0A?style=flat-square" />
-<img src="https://img.shields.io/badge/React-0A0A0A?style=flat-square&logo=react&logoColor=9FD8E8" />
-<img src="https://img.shields.io/badge/Self--Hosted-0A0A0A?style=flat-square" />
+<img src="https://img.shields.io/badge/Python-0A0A0A?style=flat-square&logo=python&logoColor=E8C87A" alt="Python" />
+<img src="https://img.shields.io/badge/Playwright-0A0A0A?style=flat-square" alt="Playwright" />
+<img src="https://img.shields.io/badge/React-0A0A0A?style=flat-square&logo=react&logoColor=9FD8E8" alt="React" />
+<img src="https://img.shields.io/badge/Self--Hosted-0A0A0A?style=flat-square" alt="Self-Hosted" />
 </td>
 </tr>
 </table>
@@ -218,8 +218,8 @@ Self-hosted anti-detect browser and profile manager — coherent fingerprints wi
        https://github.com/anuraghazra/github-readme-stats#deploy-on-your-own
      then re-add, swapping in YOUR-INSTANCE.vercel.app:
 
-     <img height="165" src="https://YOUR-INSTANCE.vercel.app/api?username=champion19007&show_icons=true&hide_border=true&bg_color=0A0A0A&title_color=E0752D&text_color=F0EDE5&icon_color=8FB8C9&ring_color=E0752D" />
-     <img height="165" src="https://YOUR-INSTANCE.vercel.app/api/top-langs/?username=champion19007&layout=compact&langs_count=8&hide_border=true&bg_color=0A0A0A&title_color=E0752D&text_color=F0EDE5" />
+     <img height="165" src="https://YOUR-INSTANCE.vercel.app/api?username=champion19007&show_icons=true&hide_border=true&bg_color=0A0A0A&title_color=E0752D&text_color=F0EDE5&icon_color=8FB8C9&ring_color=E0752D" alt="GitHub stats" />
+     <img height="165" src="https://YOUR-INSTANCE.vercel.app/api/top-langs/?username=champion19007&layout=compact&langs_count=8&hide_border=true&bg_color=0A0A0A&title_color=E0752D&text_color=F0EDE5" alt="Top languages" />
      ------------------------------------------------------------------ -->
 
 <details>
