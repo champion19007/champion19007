@@ -15,6 +15,15 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
+    paths-ignore:
+      - 'github-metrics.svg'
+      - 'assets/trophy.svg'
+
+# Only one run at a time. Two overlapping runs would both try to commit the
+# regenerated artifact to main and one would fail to push.
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
 
 jobs:
   generate:

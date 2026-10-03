@@ -21,6 +21,28 @@ on:
   schedule: [{ cron: "30 4 * * *" }]
   workflow_dispatch:
 
+  # Regenerate on every push to main so the card reflects new commits
+  # instead of waiting for the next cron.
+  #
+  # paths-ignore is load-bearing, not tidiness. These workflows commit their
+  # own output back to main, and the metrics action's message is
+  # "Update github-metrics.svg - [Skip GitHub Action]" -- which is NOT one of
+  # GitHub's recognised skip tokens ([skip ci], [ci skip], [no ci],
+  # [skip actions], [actions skip]). Without this list, that commit retriggers
+  # the workflow and it loops forever. Ignoring the generated artifacts means
+  # a push that only touches them is skipped.
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'github-metrics.svg'
+      - 'assets/trophy.svg'
+
+# Only one run at a time. Two overlapping runs would both try to commit the
+# regenerated artifact to main and one would fail to push.
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
 jobs:
   trophy:
     runs-on: ubuntu-latest
