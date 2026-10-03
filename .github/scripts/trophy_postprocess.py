@@ -15,14 +15,39 @@ import pathlib
 import re
 import sys
 
+# Keyed to github-profile-trophy's own gruvbox theme (src/theme.ts at the
+# pinned SHA) rather than reverse-engineered from a sample render. Reading
+# the source matters here: #98971a looks like a rank colour in a render but
+# is actually TEXT, and the real B rank is #d65d0e. Guessing from counts got
+# both wrong and left S looking dimmer than the A ranks below it.
+#
+# The four rank bases are a single descending ramp so higher rank always
+# reads brighter, matching the snake's contribution ramp.
+# Keys are lowercase, matching theme.ts verbatim; lookup lowercases too.
 PALETTE = {
-    "#282828": "#0A0A0A", "#151E1A": "#0A0A0A", "#301503": "#151515",
-    "#EBDBB2": "#F0EDE5", "#E1E4E8": "#F0EDE5",
-    "#98971A": "#E0752D", "#D65D0E": "#E0752D", "#FB4934": "#E0752D",
-    "#FABD26": "#E8C87A", "#FABD2F": "#E8C87A",
-    "#83A598": "#8FB8C9", "#689D6A": "#8FB8C9", "#458588": "#8FB8C9",
-    "#D3869B": "#8FB8C9", "#B16286": "#8FB8C9",
-    "#928374": "#6B7280",
+    # chrome
+    "#282828": "#0A0A0A",  # BACKGROUND (also DEFAULT_RANK_TEXT)
+    "#ebdbb2": "#F0EDE5",  # TITLE + ICON_CIRCLE -> bone
+    "#98971a": "#E0752D",  # TEXT (rank label) -> infection orange
+    "#689d6a": "#8FB8C9",  # LAUREL -> ghost blue
+    "#fabd26": "#E8C87A",  # NEXT_RANK_BAR -> pale gold
+
+    # rank ramp, brightest first
+    "#fabd2f": "#E8C87A",  # S_RANK_BASE / SHADOW
+    "#83a598": "#E0752D",  # A_RANK_BASE / SHADOW
+    "#d65d0e": "#C26426",  # B_RANK_BASE / SHADOW
+    "#928374": "#8A4A1C",  # DEFAULT_RANK (C) BASE / SHADOW
+
+    # rank label backplates -> near-void
+    "#322301": "#151515",  # S_RANK_TEXT
+    "#151e1a": "#0A0A0A",  # A_RANK_TEXT
+    "#301503": "#151515",  # B_RANK_TEXT
+
+    # secret ranks (unused today, mapped so they cannot leak gruvbox)
+    "#fb4934": "#E0752D",
+    "#d3869b": "#8FB8C9",
+    "#458588": "#8FB8C9",
+    "#b16286": "#F0EDE5",
 }
 
 CARD_W, PITCH = 115, 125
@@ -57,7 +82,7 @@ def main(path):
     svg = p.read_text(encoding="utf-8")
 
     svg = re.sub(r"#[0-9a-fA-F]{6}",
-                 lambda m: PALETTE.get(m.group(0).upper(), m.group(0)), svg)
+                 lambda m: PALETTE.get(m.group(0).lower(), m.group(0)), svg)
 
     prefix, cards, suffix = split_cards(svg)
     if not cards:
