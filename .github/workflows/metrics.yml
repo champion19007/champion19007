@@ -16,16 +16,58 @@ jobs:
       - name: Generate GitHub metrics
         uses: lowlighter/metrics@latest
         with:
-          # REQUIRED. A classic PAT with the `public_repo` scope, stored as a
-          # repo secret named METRICS_TOKEN. If this is missing or expired the
-          # whole job fails -- that was the cause of the previous run failures.
-          token: ${{ secrets.METRICS_TOKEN }}
+          # METRICS_TOKEN is set, but it is a FINE-GRAINED PAT, and this
+          # action rejects those outright:
+          #
+          #   source/app/action/index.mjs:177
+          #   if (/^github_pat_/.test(token)) throw new Error(...)
+          #
+          # It throws on the token prefix before making a single API call, so
+          # no fine-grained token can ever work here regardless of its scopes.
+          # The guard is still on master; the last release (v3.34) is from
+          # Sep 2023. That is what failed every daily run.
+          #
+          # The built-in GITHUB_TOKEN is a `ghs_` token, which the same check
+          # classifies as classic, so it passes and the job completes.
+          #
+          # Trade-off: GITHUB_TOKEN is scoped to this repo, so plugins needing
+          # account-wide reads are dropped below. To get the fuller card back,
+          # create a CLASSIC PAT with `public_repo`, store it as METRICS_TOKEN
+          # (replacing the fine-grained one), and change this single line to
+          # `${{ secrets.METRICS_TOKEN }}` -- then the plugins marked
+          # "classic PAT only" below can be re-enabled.
+          token: ${{ secrets.GITHUB_TOKEN }}
 
           # Output -- README.md embeds this file in the "Hunter's Journal" section.
           filename: github-metrics.svg
 
-          base: header, repositories, metadata
+          base: header, metadata
           config_timezone: Asia/Kolkata
+
+          # The generated SVG is hard light-mode -- it ships no
+          # prefers-color-scheme block, and 1001 of its calendar cells carry a
+          # literal fill="#ebedf0". On GitHub's dark theme that renders as a
+          # white slab, the same failure that made ghchart.rshah.org unusable.
+          #
+          # CSS beats SVG presentation attributes, so attribute selectors can
+          # remap the cells without post-processing the file. Colors are the
+          # README's Hallownest palette, and the contribution scale mirrors the
+          # snake's ramp so the two graphs read as one system.
+          extras_css: |
+            /* :root is the outermost svg only. A bare `svg` selector also
+               matches the nested <svg> used for icons and the calendar,
+               which painted an opaque panel over the commit-streak text. */
+            :root { background: #0A0A0A; }
+            svg svg { background: transparent; }
+            h1, h2, h3 { color: #E0752D !important; }
+            .field, text, tspan { color: #F0EDE5; }
+            .field svg { fill: #8FB8C9 !important; }
+            .day { outline-color: rgba(240,237,229,.07) !important; }
+            [fill="#ebedf0"] { fill: #151515; }
+            [fill="#9be9a8"] { fill: #4a2a14; }
+            [fill="#40c463"] { fill: #8a4a1c; }
+            [fill="#30a14e"] { fill: #c26426; }
+            [fill="#216e39"] { fill: #E0752D; }
 
           # Hollow Knight palette, matched to the README.
           config_display: large
@@ -34,26 +76,23 @@ jobs:
           # Plugins. Deliberately trimmed: plugins needing extra token scopes
           # (traffic, projects, notable, contributors) were the other failure
           # source. Everything below works on a plain public_repo PAT.
+          # Only plugins that return CORRECT data under the repo-scoped
+          # GITHUB_TOKEN are enabled. Verified by running the workflow and
+          # reading the rendered SVG, not by assuming:
+          #   isocalendar  -- works (full-year contribution calendar + streaks)
+          # Disabled because they were wrong, not merely sparse:
+          #   base:repositories -- rendered "1 Repository / 0 Languages"
+          #   languages         -- empty "Most used languages"
+          #   habits            -- "Unexpected error"
+          #   achievements      -- "Unexpected error"
+          #   topics            -- empty "Starred topics"
+          #   stars             -- listed only this account's own repos
+          # All of these come back once METRICS_TOKEN is a CLASSIC PAT; see
+          # the token comment above.
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
 
-          plugin_languages: yes
-          plugin_languages_ignored: html, css, tex, scss
-          plugin_languages_details: percentage
-          plugin_languages_limit: 10
 
-          plugin_habits: yes
-          plugin_habits_from: 200
-          plugin_habits_days: 14
-          plugin_habits_facts: yes
-          plugin_habits_charts: yes
 
-          plugin_stars: yes
-          plugin_stars_limit: 6
 
-          plugin_achievements: yes
-          plugin_achievements_threshold: B
 
-          plugin_topics: yes
-          plugin_topics_limit: 20
-          plugin_topics_mode: icons
