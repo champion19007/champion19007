@@ -43,6 +43,11 @@ PALETTE = {
     "#151e1a": "#0A0A0A",  # A_RANK_TEXT
     "#301503": "#151515",  # B_RANK_TEXT
 
+    # Card border. Hard-coded in the renderer, NOT in theme.ts -- which is
+    # why keying strictly to that file dropped it and left a near-white
+    # outline around every card on the dark page.
+    "#e1e4e8": "#1F2430",
+
     # secret ranks (unused today, mapped so they cannot leak gruvbox)
     "#fb4934": "#E0752D",
     "#d3869b": "#8FB8C9",
