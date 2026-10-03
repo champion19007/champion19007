@@ -1,0 +1,58 @@
+name: Refresh streak cache-bust
+
+# The streak card is third-party, so GitHub serves it through camo, and
+# streak-stats sends `Cache-Control: public, max-age=86400`. camo honours that,
+# so the card on the profile can be a full day stale -- which is why it still
+# read 802 contributions / 6-day streak after a large backfill while the source
+# already said 2,103 / 12. No parameter lowers it: `cache_seconds` and
+# `cacheSeconds` are both ignored, and the response is always max-age=86400.
+#
+# camo keys its cache on the URL, so changing the URL forces a refetch. This
+# bumps a `cachebust=YYYYMMDD` parameter on that one image.
+#
+# Deliberately its own workflow rather than a step inside metrics.yml: that job
+# has no checkout (lowlighter/metrics commits its own output), and adding one
+# risks changing how it commits. This keeps the blast radius at zero.
+#
+# The bust value is the UTC date, not a timestamp or run number. Upstream TTL is
+# 24h, so busting more often cannot surface fresher data -- it would only add
+# commits. At most one commit per day.
+
+on:
+  schedule: [{ cron: "15 4 * * *" }]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  cachebust:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Bump cachebust if the date changed
+        run: |
+          today=$(date -u +%Y%m%d)
+          current=$(grep -o 'cachebust=[0-9]*' README.md | head -1 | cut -d= -f2)
+          if [ -z "$current" ]; then
+            echo "::error::No cachebust parameter found in README.md -- the streak image URL changed shape."
+            exit 1
+          fi
+          if [ "$current" = "$today" ]; then
+            echo "Already $today; nothing to do."
+            exit 0
+          fi
+          sed -i "s/cachebust=[0-9]*/cachebust=$today/" README.md
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          # [skip ci] matters: README.md is not in the other workflows' push
+          # paths-ignore lists, so without it this commit would trigger all
+          # three of them on every bump.
+          git commit -m "chore: refresh streak card cache-bust [skip ci]"
+          git push
+          echo "Cache-bust moved $current -> $today"
