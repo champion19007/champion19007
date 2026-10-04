@@ -37,44 +37,93 @@ jobs:
   github-metrics:
     runs-on: ubuntu-latest
     steps:
+      # Picks the token at runtime, so this workflow is correct whether or not
+      # METRICS_TOKEN has been swapped yet and upgrades itself the moment it
+      # is -- no second edit required.
+      #
+      #   ghp_*         classic PAT   -> full card, private contributions in
+      #   github_pat_*  fine-grained  -> rejected by the action, fall back
+      #   unset / other               -> fall back to GITHUB_TOKEN
+      #
+      # Only a boolean reaches the output. The token value is never echoed.
+      - name: Choose token
+        id: tok
+        env:
+          MT: ${{ secrets.METRICS_TOKEN }}
+        run: |
+          case "$MT" in
+            ghp_*)
+              echo "classic=true" >> "$GITHUB_OUTPUT"
+              echo "METRICS_TOKEN is a classic PAT -- full card."
+              ;;
+            github_pat_*)
+              echo "classic=false" >> "$GITHUB_OUTPUT"
+              echo "::warning::METRICS_TOKEN is a FINE-GRAINED PAT, which lowlighter/metrics rejects outright. Falling back to GITHUB_TOKEN; the card will show PUBLIC contributions only. Replace it with a classic PAT carrying full 'repo' scope."
+              ;;
+            "")
+              echo "classic=false" >> "$GITHUB_OUTPUT"
+              echo "::warning::METRICS_TOKEN is unset -- using GITHUB_TOKEN. Public contributions only."
+              ;;
+            *)
+              echo "classic=false" >> "$GITHUB_OUTPUT"
+              echo "::warning::METRICS_TOKEN does not look like a classic PAT (expected a ghp_ prefix) -- using GITHUB_TOKEN. Public contributions only."
+              ;;
+          esac
+
       - name: Generate GitHub metrics
         uses: lowlighter/metrics@latest
         with:
-          # METRICS_TOKEN is set, but it is a FINE-GRAINED PAT, and this
-          # action rejects those outright:
-          #
-          #   source/app/action/index.mjs:177
-          #   if (/^github_pat_/.test(token)) throw new Error(...)
-          #
-          # It throws on the token prefix before making a single API call, so
-          # no fine-grained token can ever work here regardless of its scopes.
-          # The guard is still on master; the last release (v3.34) is from
-          # Sep 2023. That is what failed every daily run.
-          #
-          # The built-in GITHUB_TOKEN is a `ghs_` token, which the same check
-          # classifies as classic, so it passes and the job completes.
-          #
-          # Trade-off: GITHUB_TOKEN is scoped to this repo, so plugins needing
-          # account-wide reads are dropped below. To get the fuller card back,
-          # create a CLASSIC PAT with `public_repo`, store it as METRICS_TOKEN
-          # (replacing the fine-grained one), and change this single line to
-          # `${{ secrets.METRICS_TOKEN }}` -- then the plugins marked
-          # "classic PAT only" below can be re-enabled.
-          token: ${{ secrets.GITHUB_TOKEN }}
+          # The classic PAT needs full `repo` scope, NOT `public_repo`.
+          # `public_repo` clears the fine-grained rejection but still cannot
+          # read private repositories, and 970 of 1,339 contributions on this
+          # account are private -- so the card would still undercount by ~72%
+          # and keep disagreeing with the profile page.
+          token: ${{ steps.tok.outputs.classic == 'true' && secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
 
           # Output -- README.md embeds this file in the "Hunter's Journal" section.
           filename: github-metrics.svg
-
-          base: header, metadata
           config_timezone: Asia/Kolkata
+          config_display: large
+          config_octicon: yes
+
+          # Everything below is gated on the token actually being classic.
+          # Under the repo-scoped GITHUB_TOKEN these render "1 Repository /
+          # 0 Languages" or "Unexpected error", which is worse than omitting
+          # them -- verified by running the workflow and reading the SVG.
+          base: ${{ steps.tok.outputs.classic == 'true' && 'header, repositories, metadata' || 'header, metadata' }}
+
+          # Correct under either token.
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+
+          plugin_languages: ${{ steps.tok.outputs.classic == 'true' && 'yes' || 'no' }}
+          plugin_languages_ignored: html, css, tex, scss
+          plugin_languages_details: percentage
+          plugin_languages_limit: 10
+
+          plugin_habits: ${{ steps.tok.outputs.classic == 'true' && 'yes' || 'no' }}
+          plugin_habits_from: 200
+          plugin_habits_days: 14
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
+
+          plugin_achievements: ${{ steps.tok.outputs.classic == 'true' && 'yes' || 'no' }}
+          plugin_achievements_threshold: B
+
+          plugin_topics: ${{ steps.tok.outputs.classic == 'true' && 'yes' || 'no' }}
+          plugin_topics_limit: 20
+          plugin_topics_mode: icons
+
+          plugin_stars: ${{ steps.tok.outputs.classic == 'true' && 'yes' || 'no' }}
+          plugin_stars_limit: 6
 
           # The generated SVG is hard light-mode -- it ships no
-          # prefers-color-scheme block, and 1001 of its calendar cells carry a
-          # literal fill="#ebedf0". On GitHub's dark theme that renders as a
-          # white slab, the same failure that made ghchart.rshah.org unusable.
+          # prefers-color-scheme block, and its calendar cells carry a literal
+          # fill="#ebedf0". On GitHub's dark theme that renders as a white
+          # slab, the same failure that made ghchart.rshah.org unusable.
           #
           # CSS beats SVG presentation attributes, so attribute selectors can
-          # remap the cells without post-processing the file. Colors are the
+          # remap the cells without post-processing the file. Colours are the
           # README's Hallownest palette, and the contribution scale mirrors the
           # snake's ramp so the two graphs read as one system.
           extras_css: |
@@ -92,27 +141,3 @@ jobs:
             [fill="#40c463"] { fill: #8a4a1c; }
             [fill="#30a14e"] { fill: #c26426; }
             [fill="#216e39"] { fill: #E0752D; }
-
-          # Hollow Knight palette, matched to the README.
-          config_display: large
-          config_octicon: yes
-
-          # Plugins. Deliberately trimmed: plugins needing extra token scopes
-          # (traffic, projects, notable, contributors) were the other failure
-          # source. Everything below works on a plain public_repo PAT.
-          # Only plugins that return CORRECT data under the repo-scoped
-          # GITHUB_TOKEN are enabled. Verified by running the workflow and
-          # reading the rendered SVG, not by assuming:
-          #   isocalendar  -- works (full-year contribution calendar + streaks)
-          # Disabled because they were wrong, not merely sparse:
-          #   base:repositories -- rendered "1 Repository / 0 Languages"
-          #   languages         -- empty "Most used languages"
-          #   habits            -- "Unexpected error"
-          #   achievements      -- "Unexpected error"
-          #   topics            -- empty "Starred topics"
-          #   stars             -- listed only this account's own repos
-          # All of these come back once METRICS_TOKEN is a CLASSIC PAT; see
-          # the token comment above.
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: full-year
-
